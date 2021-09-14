@@ -8,21 +8,21 @@ clone:
   disable: true
 
 steps:
-  - name: build
-    image: golang:1.16.7
+  - name: test
+    image: golang:1.16-alpine
     commands:
-      - go build
+      - "go test"
 
-#  - name: docker
-#    image: plugins/docker
-#    settings:
-#      registry: hub.docker.com
-#      repo: https://github.com/joshku01/golang-test-cicd
-#      auto_tag: true
-#      auto_tag_suffix: linux-amd64
-#      username: joshku01
-#      password:
-#        from_secret: docker_password
+  - name: docker
+    image: plugins/docker
+    settings:
+      registry: hub.docker.com
+      repo: https://github.com/joshku01/golang-test-cicd
+      auto_tag: true
+      auto_tag_suffix: linux-amd64
+      username: joshku01
+      password:
+        from_secret: docker_password
 ## 觸發 pipeline 條件
 trigger:
   branch:
