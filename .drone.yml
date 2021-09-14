@@ -3,6 +3,14 @@ kind: pipeline
 type: docker
 name: default
 
+workspace:
+  base: /
+  path: test
+
+## 禁止默認 clone 行為
+clone:
+  disable: true
+
 steps:
   - name: test
     image: golang:1.16-alpine
