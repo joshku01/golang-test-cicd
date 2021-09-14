@@ -14,7 +14,7 @@ steps:
       - cat /etc/hosts
     when:
       branch:
-        - main
+        - refs/heads/main
 
   - name: docker
     image: plugins/docker
@@ -29,6 +29,4 @@ steps:
 ## 觸發 pipeline 條件
 trigger:
   branch:
-    - main
-  event:
-    - push
+    - refs/heads/main
