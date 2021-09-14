@@ -12,9 +12,6 @@ steps:
     image: alpine
     commands:
       - cat /etc/hosts
-    when:
-      branch:
-        - refs/heads/main
 
   - name: docker
     image: plugins/docker
@@ -28,5 +25,6 @@ steps:
         from_secret: docker_password
 ## 觸發 pipeline 條件
 trigger:
-  branch:
-    - refs/heads/main
+  ref:
+    include:
+      - refs/heads/main
