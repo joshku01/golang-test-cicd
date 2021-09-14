@@ -4,7 +4,7 @@ type: docker
 name: default
 
 workspace:
-  base: /
+  base: /go/src
   path: test
 
 ## 禁止默認 clone 行為
