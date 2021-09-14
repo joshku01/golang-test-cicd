@@ -22,3 +22,13 @@ steps:
       username: joshku01
       password:
         from_secret: docker_password
+## 觸發 pipeline 條件
+trigger:
+  ref:
+    include:
+      - refs/heads/main
+      - refs/heads/develop
+      - refs/heads/qatest
+      - refs/heads/int
+      - refs/tags/v*
+      - refs/tags/t*
