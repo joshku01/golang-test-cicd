@@ -1,8 +1,11 @@
 ---
 kind: pipeline
 type: docker
-name: clone
+name: default
 
+## 禁止默認 clone 行為
+clone:
+  disable: true
 
 steps:
   - name: host
