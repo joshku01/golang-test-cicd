@@ -13,7 +13,8 @@ steps:
     commands:
       - cat /etc/hosts
     when:
-      status: [ success, failure ]
+      branch:
+        - main
 
   - name: docker
     image: plugins/docker
